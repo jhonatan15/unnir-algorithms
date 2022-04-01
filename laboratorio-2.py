@@ -1,24 +1,26 @@
 class Pila: 
     def __init__(lista): 
-        lista.elements = [] 
+        lista.elements = []
+
+    def print_list(lista):
+        return (f"Los elementos de la pila son: {lista.elements}")
     
     def push(lista, datos): 
         lista.elements.append(datos) 
         return datos 
     
     def size(lista):
-        print(f"La pila tiene una tamaño de {len(lista.elements)} elementos en este momento")
-        return len(lista.elements)
+        return (f"La pila tiene una tamaño de {len(lista.elements)} elementos en este momento")
     
     def pop(lista): 
-        print(f"El elemento superior de la lista es {lista.elements.pop()}")
+        print(f"El elemento superior de la lista es {lista.elements[-1]}")
         print(f"El elemento superior ha sido eliminado")
         return lista.elements.pop() 
         
-    def peek(lista): 
-        return lista.elements[-1] 
+    def peek(lista):
+        return (f"El elemento superior de la lista es {lista.elements[-1]}")
         
-    def is_empty(lista): 
+    def is_empty(lista):
         return len(lista.elements) == 0
 
 if __name__ == '__main__':
@@ -26,8 +28,8 @@ if __name__ == '__main__':
 
 start = True  
 while start == True:
-    print("""Bienvenido al programa
-            Elija una de las siguientes opciones""")
+    print("""\nBienvenido al programa
+Elija una de las siguientes opciones""")
     choose = int(input("""
     1. TDA Pila
     2. TDA Cola
@@ -47,16 +49,15 @@ while start == True:
             """))
             if choose_2 == 1:
                 ## Creating the empty pila
-                print("Se ha creado una lista vacia")
+                print("Se ha creado una lista vacia\n")
                 pila.__init__()
             elif choose_2 == 2:
                 ## Show the size of the pila
-
                 print(pila.size())
             elif choose_2 == 3:
                 ## pushing the elements with a cycle for
-                numbers = int(input("¿Cuantos números desea agregar a la lista?\n"))
-                print(f"Se agregaron los numeros del 0 al {numbers-1}")
+                numbers = int(input("¿Cuantos números desea agregar a la pila?\n"))
+                print(f"Se agregaron los numeros del 0 al {numbers-1}\n")
                 for i in range(numbers):
                     pila.push(i)
             elif choose_2 == 4:
@@ -68,19 +69,20 @@ while start == True:
             elif choose_2 == 6:
                 ## checking is_empty method
                 if pila.is_empty() == True:
-                    print("La pila esta vacia")
+                    print("La pila esta vacia\n")
                 else:
-                    print(f"Los elementos de la pila son: {pila.__init__}")
+                    print(pila.print_list())
             elif choose_2 == 7:
                 ## Creating the empty pila
                 pila.__init__()
+                print("Se han elimiado los elementos de la pila\n")
             elif choose_2 == 8:
                 break
     elif choose == 2:
-        print("Has ingresado a la opción 2")
+        print("Has ingresado a la opción 2\n")
     elif choose == 3:
-        print("has elegido salir del programa, hasta pronto.")
+        print("has elegido salir del programa, hasta pronto.\n")
         break
     else:
-        print("opción invalida, por favor ingrese una opción valida.")
+        print("opción invalida, por favor ingrese una opción valida.\n")
         
