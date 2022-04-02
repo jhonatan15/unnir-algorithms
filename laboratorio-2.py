@@ -64,6 +64,7 @@ Elija una de las siguientes opciones""")
     """))
     if choose == 1:
         while True:
+            ## While cycly for the menu of the Pila program
             choose_2 = int(input("""Elija una de las siguientes opciones
             1. Crear pila vacia
             2. Consultar el tamaño de la pila
@@ -93,7 +94,7 @@ Elija una de las siguientes opciones""")
                 if pila.is_empty() == True:
                     print("La lista esta vacia")
                 else: 
-                    print(f"El elemento del frente de la pila es {pila.peek()}")
+                    print(f"El elemento superior de la pila es {pila.peek()}")
                     pila.pop_1()
                     print(f"El elemento superior ha sido eliminado\n")
             elif choose_2 == 5:
@@ -114,6 +115,7 @@ Elija una de las siguientes opciones""")
                         print("Se han eliminado todos los elementos de la pila o ya estaba vacia")
                     
             elif choose_2 == 8:
+                ## Searching a number in the pila and if not equal to the choose number then erase the element in the pila until find the choose number
                 number_1 = int(input("Escriba el número a buscar\n"))
                 erased_nums = []
                 for num in range(numbers):
@@ -131,6 +133,7 @@ Elija una de las siguientes opciones""")
                 break
     elif choose == 2:
         while True:
+            ## While cycly for the menu of the Queue program
             choose_2 = int(input("""Elija una de las siguientes opciones
             1. Crear cola vacia
             2. Consultar el tamaño de la cola
@@ -145,25 +148,25 @@ Elija una de las siguientes opciones""")
             11. Salir
             """))
             if choose_2 == 1:
-                ## Creating the empty pila
+                ## Creating the empty queue
                 print("Se ha creado una cola vacia\n")
                 cola.__init__()
             elif choose_2 == 2:
-                ## Show the size of the pila
+                ## Show the size of the queue
                 print(cola.size())
             elif choose_2 == 3:
-                ## pushing the elements with a cycle for
+                ## enqueue the elements with a cycle for
                 numbers = int(input("¿Cuantos números desea agregar a la cola?\n"))
                 print(f"Se agregaron los numeros del 0 al {numbers-1}\n")
                 for i in range(numbers):
                     cola.enqueue(i)
             elif choose_2 == 4:
-                ## popping and reading the topmost element
+                ## popping and reading the element in the front of the queue
                 print(f"El elemento del frente de la cola es {cola.front()}")
                 cola.dequeue()
                 print(f"El elemento del frente ha sido eliminado\n")
             elif choose_2 == 5:
-                ## printing the topmost element of the pila
+                ## printing the element in the front of the queue
                 print(f"El elemento del frente de la lista es {cola.front()}\n")
             elif choose_2 == 6:
                 ## checking is_empty method
@@ -172,6 +175,7 @@ Elija una de las siguientes opciones""")
                 else:
                     print(cola.print_list())
             elif choose_2 == 7:
+                ## printing the final element of the queue
                 print(f"El elemento del final de la lista es {cola.rear()}\n")
             elif choose_2 == 8:
                 number_3 = int(input("¿Cuantos números desea agregar a la cola?\n"))
@@ -179,13 +183,14 @@ Elija una de las siguientes opciones""")
                 for i in range(number_3):
                     cola.enqueue(i)
             elif choose_2 == 9:
-                ## Creating the empty pila
+                ## Erasing each element of the queue
                 while cola.is_empty() == False:
                     print(f"Se ha eliminado el elemento {cola.front()} de la lista...\n")
                     cola.enqueue()
                     if cola.is_empty() == True:
                         print("Se han eliminado todos los elementos de la pila.")
             elif choose_2 == 10:
+                ## Searching a number in the queue and if not equal to the choose number then erase the element in the queue until find the choose number
                 number_1 = int(input("Escriba el número a buscar\n"))
                 erased_nums = []
                 for num in range(numbers):
